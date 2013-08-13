@@ -13,25 +13,25 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/reportmain_btn_report1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reporte 1" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/reportmain_btn_report2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reporte 2" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/reportmain_btn_report3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reporte 3" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/reportmain_btn_report4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reporte 4" />

@@ -381,10 +381,6 @@ containing a value of this type.
         public static final int btn_productos=0x7f080119;
         public static final int btn_reportes=0x7f08011b;
         public static final int btn_ventas=0x7f08011a;
-        public static final int button1=0x7f0800db;
-        public static final int button2=0x7f0800dc;
-        public static final int button3=0x7f0800dd;
-        public static final int button4=0x7f0800de;
         public static final int checkBox1=0x7f0800e1;
         public static final int citas_asunto_row=0x7f080029;
         public static final int citas_btn_acept_estatus=0x7f080049;
@@ -555,6 +551,10 @@ containing a value of this type.
         public static final int relativeLayout7=0x7f080084;
         public static final int relativeLayout8=0x7f080077;
         public static final int relativeLayout9=0x7f080088;
+        public static final int reportmain_btn_report1=0x7f0800db;
+        public static final int reportmain_btn_report2=0x7f0800dc;
+        public static final int reportmain_btn_report3=0x7f0800dd;
+        public static final int reportmain_btn_report4=0x7f0800de;
         public static final int reports_detail=0x7f0800df;
         public static final int restart_preview=0x7f08000a;
         public static final int result_button_view=0x7f08001d;
