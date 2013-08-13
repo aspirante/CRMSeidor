@@ -466,9 +466,6 @@ containing a value of this type.
         public static final int history_detail=0x7f0800a6;
         public static final int history_title=0x7f0800a5;
         public static final int hybrid=0x7f080004;
-        public static final int imageButton1=0x7f080113;
-        public static final int imageButton2=0x7f080115;
-        public static final int imageButton3=0x7f080114;
         public static final int imageView1=0x7f08000f;
         public static final int imageView2=0x7f08000e;
         public static final int imageView3=0x7f08002d;
@@ -517,7 +514,6 @@ containing a value of this type.
         public static final int menu_share=0x7f08012a;
         public static final int meta_text_view=0x7f08001a;
         public static final int meta_text_view_label=0x7f080019;
-        public static final int mySimpleXYPlot=0x7f080116;
         public static final int none=0x7f080000;
         public static final int normal=0x7f080001;
         public static final int order_detail_cantidad=0x7f0800ba;
@@ -601,6 +597,9 @@ containing a value of this type.
         public static final int sales_row_moneda=0x7f080104;
         public static final int sales_row_pedido=0x7f0800f1;
         public static final int sales_spinner_clientes=0x7f0800fd;
+        public static final int sample_xy_plot_btn_report1=0x7f080113;
+        public static final int sample_xy_plot_btn_report2=0x7f080115;
+        public static final int sample_xy_plot_btn_report3=0x7f080114;
         public static final int satellite=0x7f080002;
         public static final int settings=0x7f080132;
         public static final int share_app_button=0x7f08010e;
@@ -645,6 +644,7 @@ containing a value of this type.
         public static final int ventas_add_cotizacion=0x7f080139;
         public static final int ventas_add_pedido=0x7f080138;
         public static final int viewfinder_view=0x7f080013;
+        public static final int webView1=0x7f080116;
     }
     public static final class layout {
         public static final int app_picker_list_item=0x7f030000;
