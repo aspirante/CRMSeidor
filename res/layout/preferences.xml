@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_url"
+        android:summary="Ingrese la url"
+        android:title="URL" />
+<!--     <ListPreference -->
+<!--         android:dependency="pref_sync" -->
+<!--         android:key="pref_url" /> -->
+</PreferenceScreen>
+
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" > -->
+<!--  <PreferenceCategory -->
+<!--    android:summary="Informacion de usuario y clave" -->
+<!--    android:title="Informacion de accceso" > -->
+<!--   <EditTextPreference -->
+<!--      android:key="username" -->
+<!--      android:summary="Ingrese nombre de usuario" -->
+<!--      android:title="Usuario" /> -->
+<!--   <EditTextPreference -->
+<!--      android:key="password" -->
+<!--      android:summary="Ingrese su clave" -->
+<!--      android:title="Clave" /> -->
+<!--  </PreferenceCategory> -->
+ 
+<!--  <PreferenceCategory -->
+<!--    android:summary="Username and password information" -->
+<!--    android:title="Settings" > -->
+<!--   <CheckBoxPreference -->
+<!--      android:key="checkBox" -->
+<!--      android:summary="On/Off" -->
+<!--      android:title="Keep me logged in" /> -->
+
+<!--  </PreferenceCategory> -->
+<!-- </PreferenceScreen> -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+ 
+ <PreferenceCategory
+   android:summary="Url de servidor para conexion"
+   android:title="URL a conectar">
+  <EditTextPreference
+     android:key="url"
+     android:defaultValue="148.245.236.116:8007"
+     android:summary="Ejemplo: mipagina.com o xxx.xxx.xxx.xx:puerto"
+     android:title="Url"/>
+ </PreferenceCategory>
+ 
+</PreferenceScreen>

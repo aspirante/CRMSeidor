@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_citas"
+        android:layout_width="@dimen/size100"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_citas_titulo"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_clientes"
+        android:layout_width="@dimen/size100"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_citas"
+        android:background="@drawable/img_clientes_titulo"
+        android:textColor="@color/WHITE"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_productos"
+        android:layout_width="@dimen/size100"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_clientes"
+        android:background="@drawable/img_productos_titulo"
+        android:focusable="false" />
+
+    <Button
+        android:id="@+id/btn_ventas"
+        android:layout_width="@dimen/size100"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_productos"
+        android:background="@drawable/img_ventas_titulo" />
+
+    <Button
+        android:id="@+id/btn_reportes"
+        android:layout_width="@dimen/size100"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_ventas"
+        android:background="@drawable/img_reportes_titulo" />
+
+</RelativeLayout>

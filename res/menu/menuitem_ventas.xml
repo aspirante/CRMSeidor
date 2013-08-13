@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/ventas_add_pedido"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Pedido"/>
+
+    <item
+        android:id="@+id/ventas_add_cotizacion"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Cotizacion"/>
+    
+   <item
+        android:id="@+id/action_settings"
+        android:title="Configuarar"
+        android:showAsAction="never"
+        >
+    </item>
+    
+</menu> 

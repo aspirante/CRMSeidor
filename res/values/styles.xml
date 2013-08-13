@@ -1,0 +1,201 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="button_text" >
+    <item name="android:layout_width" >fill_parent</item>
+    <item name="android:layout_height" >wrap_content</item>
+    <item name="android:textColor" >@color/WHITE</item>
+    <item name="android:gravity" >center</item>
+    <item name="android:layout_margin" >1dp</item>
+    <item name="android:textSize" >@dimen/size30</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowColor" >@color/BLACK</item>
+    <item name="android:shadowDx" >1</item>
+    <item name="android:shadowDy" >1</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+  
+  <style name="header_ventas_list" >
+    <item name="android:textColor" >@color/WHITE</item>
+    <item name="android:gravity" >center</item>
+    <item name="android:layout_margin" >1dp</item>
+    <item name="android:textSize" >@dimen/size16</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowColor" >@color/BLACK</item>
+    <item name="android:shadowDx" >1</item>
+    <item name="android:shadowDy" >1</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+  
+  
+  <style name="Size12" >
+   <item name="android:textSize" >@dimen/size12</item>
+  </style>  
+  
+  <style name="Size14" >
+   <item name="android:textSize" >@dimen/size14</item>
+  </style>  
+  
+  <style name="Size18" >
+   <item name="android:textSize" >@dimen/size18</item>
+  </style>  
+  
+  <style name="Size22" >
+   <item name="android:textSize" >@dimen/size22</item>
+  </style>
+  
+  
+  <style name="Size12_Bold" parent ="Size12">
+   <item name="android:textStyle" >bold</item>
+  </style>  
+  
+  <style name="Size14_Bold" parent = "Size14" >
+   <item name="android:textStyle" >bold</item>
+  </style>  
+  
+  <style name="Size18_Bold" parent = "Size18">
+   <item name="android:textStyle" >bold</item>
+  </style>  
+  
+  <style name="Size22_Bold" parent = "Size22" >
+   <item name="android:textStyle" >bold</item>
+  </style>
+  
+  <style name="Size12_Bold_Black" parent ="Size12_Bold">
+   <item name="android:textColor" >@color/BLACK</item>
+  </style>  
+  
+  <style name="Size14_Bold_Black_SHADOW" parent = "Size14_Bold" >
+   <item name="android:textColor" >@color/BLACK</item>
+  </style>  
+  
+  <style name="Size18_Bold_Black" parent = "Size18_Bold">
+   <item name="android:textColor" >@color/BLACK</item>
+  </style>  
+  
+  <style name="Size22_Bold_Black" parent = "Size22_Bold" >
+   <item name="android:textColor" >@color/BLACK</item>
+ </style>
+  
+  <style name="Size12_Bold_Black_shodow" parent ="Size12_Bold">
+   <item name="android:shadowColor" >@drawable/BLACK_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item> 
+  </style>  
+  
+  <style name="Size14_Bold_Black_shodow" parent = "Size14_Bold" >
+   <item name="android:shadowColor" >@drawable/BLACK_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item> 
+  </style>  
+  
+  <style name="Size18_Bold_Black_shodow" parent = "Size18_Bold">
+   <item name="android:shadowColor" >@drawable/BLACK_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item> 
+  </style>  
+  
+  <style name="Size22_Bold_Black_shodow" parent = "Size22_Bold" >
+   <item name="android:shadowColor" >@drawable/BLACK_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item> 
+  </style>
+
+  <style name="Size12_Bold_White" parent ="Size12_Bold">
+   <item name="android:textColor" >@color/WHITE</item>
+  </style>  
+  
+  <style name="Size14_Bold_White" parent = "Size14_Bold" >
+   <item name="android:textColor" >@color/WHITE</item>
+  </style>  
+  
+  <style name="Size18_Bold_White" parent = "Size18_Bold">
+   <item name="android:textColor" >@color/WHITE</item>
+  </style>  
+  
+  <style name="Size22_Bold_White" parent = "Size22_Bold" >
+   <item name="android:textColor" >@color/WHITE</item>
+  </style>
+  
+  <style name="Size12_Bold_White_Shadow" parent ="Size12_Bold_White">
+   <item name="android:shadowColor" >@drawable/WHITE_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item>
+  </style>  
+  
+  <style name="Size14_Bold_White_Shadow" parent = "Size14_Bold_White" >
+   <item name="android:shadowColor" >@drawable/WHITE_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item>
+  </style>  
+  
+  <style name="Size18_Bold_White_Shadow" parent = "Size18_Bold_White">
+   <item name="android:shadowColor" >@drawable/WHITE_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item>
+  </style>  
+  
+  <style name="Size22_Bold_White_Shadow" parent = "Size22_Bold_White" >
+   <item name="android:shadowColor" >@drawable/WHITE_SHADOW</item>
+   <item name="android:shadowDx" >0</item>
+   <item name="android:shadowDy" >1</item>
+   <item name="android:shadowRadius" >1</item> 
+  </style>
+  
+  
+  
+  
+  <style name="Size12_Bold_Gray" parent ="Size12_Bold">
+   <item name="android:textColor" >@color/GRAY</item>
+  </style>  
+  
+  <style name="Size14_Bold_Gray" parent = "Size14_Bold" >
+   <item name="android:textColor" >@color/GRAY</item>
+  </style>  
+  
+  <style name="Size18_Bold_Gray" parent = "Size18_Bold">
+   <item name="android:textColor" >@color/GRAY</item>
+  </style>  
+  
+  <style name="Size22_Bold_Gray" parent = "Size22_Bold" >
+   <item name="android:textColor" >@color/GRAY</item>
+  </style>
+  
+  
+      
+  <style name="Bold_22" parent="Size22" >
+    <item name="android:gravity" >center</item>
+    <item name="android:layout_margin" >1dp</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowColor" >@color/BLACK</item>
+    <item name="android:shadowDx" >1</item>
+    <item name="android:shadowDy" >1</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+  
+  
+  
+</resources>

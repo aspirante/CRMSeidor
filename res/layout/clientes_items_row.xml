@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size32" >
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/clientes_items_pedido_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/txt_pedido"
+                    android:textSize="@dimen/size10" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout6"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/frameLayout4" >
+
+                <TextView
+                    android:id="@+id/clientes_items_importe_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:text="@string/txt_importe"
+                    android:textSize="@dimen/size10" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout3"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frameLayout2" >
+
+                <TextView
+                    android:id="@+id/clientes_items_fecha_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:text="@string/txt_fecha"
+                    android:textSize="@dimen/size10" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout1"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/frameLayout5" >
+
+                <TextView
+                    android:id="@+id/clientes_items_nofactura_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:text="@string/txt_no_factura"
+                    android:textSize="@dimen/size10" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout4"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frameLayout3" >
+
+                <TextView
+                    android:id="@+id/clientes_items_cliente_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:text="@string/txt_cliente"
+                    android:textSize="@dimen/size10" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout5"
+                android:layout_width="@dimen/size80"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frameLayout6" >
+
+                <TextView
+                    android:id="@+id/clientes_items_moneda_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:text="@string/txt_moneda"
+                    android:textSize="@dimen/size10" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+</LinearLayout>

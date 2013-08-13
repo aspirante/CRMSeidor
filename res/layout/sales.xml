@@ -1,0 +1,665 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/sales_headers_list"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_alignRight="@+id/relativeLayout1"
+        android:layout_below="@+id/relativeLayout1" >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/img_pedidos" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        style="@style/Size12"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/sales_headers_list"
+        android:layout_below="@+id/sales_headers_list"
+        android:layout_marginTop="@dimen/size12"
+        android:text="@string/txt_pedidos_facturados" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox1"
+        android:layout_below="@+id/checkBox1"
+        android:layout_marginTop="@dimen/size12"
+        android:src="@drawable/img_detalle_pedidos" />
+
+    <ListView
+        android:id="@+id/sales_items_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/sales_headers_list"
+        android:layout_below="@+id/RelativeLayout03"
+        android:layout_marginBottom="@dimen/size16" >
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout03"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/sales_items_list"
+        android:layout_below="@+id/imageView2" >
+
+        <FrameLayout
+            android:id="@+id/FrameLayout08"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView13"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_material"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout13"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout14"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView11"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_centro"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout09"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout13"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView14"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cantidad"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout10"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout09"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_um"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout12"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout10"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView06"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_costo"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout14"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout08"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView15"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_descripcion"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/imageView1" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:animateLayoutChanges="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_pedido"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout7"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout5"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_fecha"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout7"
+            android:background="@color/GRAY_HEADER_LIST"
+            android:clipChildren="false" >
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout1"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_factura"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout4"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/productos_row_stock"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_importe" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout3"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/productos_row_precio"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_moneda"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/sales_btn_nuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignTop="@+id/sales_btn_update"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/sales_btn_update"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_nuevo_gray" />
+
+    <ImageButton
+        android:id="@+id/sales_btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignRight="@+id/sales_headers_list"
+        android:background="#00000000"
+        android:src="@drawable/ic_search" />
+
+    <EditText
+        android:id="@+id/sales_edit_filter_pedidos"
+        android:layout_width="@dimen/size100"
+        android:layout_height="@dimen/size32"
+        android:layout_above="@+id/imageView2"
+        android:layout_marginTop="@dimen/size12"
+        android:layout_toLeftOf="@+id/sales_btn_search"
+        android:ems="10"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textSize="@dimen/size10" >
+
+        <requestFocus />
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/sales_btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_actualizar_gray" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_above="@+id/sales_items_list"
+        android:layout_alignLeft="@+id/tableLayout1" >
+
+        <FrameLayout
+            android:id="@+id/FrameLayout02"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView03"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_item"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout01"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout03"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView01"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cantidad"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout03"
+            android:layout_width="@dimen/size160"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout02"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView02"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_material"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/sales_modify_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RelativeLayout01"
+        android:layout_alignRight="@+id/RelativeLayout01"
+        android:layout_alignTop="@+id/sales_items_list"
+        android:layout_marginBottom="@dimen/size16" >
+    </ListView>
+
+    <ImageButton
+        android:id="@+id/sales_btn_accept"
+        android:layout_width="@dimen/size48"
+        android:layout_height="@dimen/size48"
+        android:layout_alignRight="@+id/tableLayout1"
+        android:layout_alignTop="@+id/sales_btn_nuevo"
+        android:layout_marginRight="@dimen/size16"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_accept" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sales_btn_nuevo"
+        android:layout_alignLeft="@+id/sales_btn_update"
+        android:src="@drawable/line_blue" />
+
+    <Button
+        android:id="@+id/sales_btn_add_material"
+        android:layout_width="@dimen/size32"
+        android:layout_height="@dimen/size32"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/RelativeLayout01"
+        android:background="@drawable/img_shop_gray" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignLeft="@+id/sales_btn_update" >
+
+        <TableRow
+            android:id="@+id/sales_row_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48" >
+
+            <TextView
+                android:id="@+id/productos_descripcion"
+                style="@style/Size14_Bold"
+                android:layout_width="@dimen/size100"
+                android:layout_gravity="bottom"
+                android:text="@string/txt_no_pedido" />
+
+            <TextView
+                android:id="@+id/sales_no_pedido"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom" 
+                android:nextFocusRight="@+id/sales_entrega_radio_inmediato"/>
+
+        </TableRow>
+
+        <RelativeLayout
+            android:id="@+id/sales_row_entrega"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48" >
+
+            <TextView
+                android:id="@+id/main_user"
+                style="@style/Size14_Bold"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Entrega" />
+
+            <RadioGroup
+                android:id="@+id/sales_radiogroup_entrega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="34dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/sales_entrega_radio_inmediato"
+                    style="@style/Size14_Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_inmediato" />
+
+                <RadioButton
+                    android:id="@+id/sales_entrega_radio_normal"
+                    style="@style/Size14_Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_normal" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sales_row_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48" >
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/Size14_Bold"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="@string/txt_fecha" />
+
+            <TextView
+                android:id="@+id/sales_fecha"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView6" />
+
+            <ImageButton
+                android:id="@+id/sales_btn_fecha"
+                android:layout_width="@dimen/size48"
+                android:layout_height="@dimen/size48"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/size16"
+                android:layout_toRightOf="@+id/sales_fecha"
+                android:background="@android:color/transparent"
+                android:src="@drawable/img_fecha" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sales_row_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48"
+            android:gravity="right" >
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/Size14_Bold"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="23dp"
+                android:text="@string/txt_cliente" />
+
+            <TextView
+                android:id="@+id/sales_clienteId"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView8"
+                android:layout_alignBottom="@+id/textView8"
+                android:layout_toRightOf="@+id/textView8"
+                android:width="@dimen/size100" />
+
+            <Spinner
+                android:id="@+id/sales_spinner_clientes"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/size48"
+                android:layout_below="@+id/txt_title_material"
+                android:layout_toLeftOf="@+id/sales_btn_accept_edit_clientid"
+                android:background="@android:color/transparent" />
+
+            <ImageButton
+                android:id="@+id/sales_btn_edit_clientid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/sales_spinner_clientes"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_edit" />
+
+            <TextView
+                android:id="@+id/txt_title_material"
+                style="@style/Size12_Bold_Black_shodow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/sales_spinner_clientes"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="27dp"
+                android:text="@string/txt_cliente" />
+
+            <ImageButton
+                android:id="@+id/sales_btn_accept_edit_clientid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_accept" />
+
+        </RelativeLayout>
+
+        <TableRow
+            android:id="@+id/sales_row_importe"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48"
+            android:layout_marginTop="@dimen/size10" >
+
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/Size14_Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_importe" />
+
+            <TextView
+                android:id="@+id/sales_importe"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/sales_row_moneda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10" >
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/Size14_Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:text="@string/txt_moneda" />
+
+            <TextView
+                android:id="@+id/sales_moneda"
+                android:layout_width="@dimen/size100"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom" />
+
+        </TableRow>
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/sales_btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView3"
+        android:layout_alignRight="@+id/imageView1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_refresh" />
+
+    <ImageButton
+        android:id="@+id/sales_btn_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignBottom="@+id/sales_btn_refresh"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/sales_btn_nuevo"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_eliminar_gray" />
+
+</RelativeLayout>

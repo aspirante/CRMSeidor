@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/row_pedido_por_cliente_material"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="66dp"
+        android:layout_gravity="center"
+        android:text="@string/txt_material" />
+
+    <TextView
+        android:id="@+id/row_pedidos_por_cliente_descripcion"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/row_pedido_por_cliente_material"
+        android:layout_alignBottom="@+id/row_pedido_por_cliente_material"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/row_pedido_por_cliente_material"
+        android:text="@string/txt_descripcion" />
+
+    <TextView
+        android:id="@+id/row_pedidos_por_cliente_centro"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/row_pedidos_por_cliente_descripcion"
+        android:layout_alignBottom="@+id/row_pedidos_por_cliente_descripcion"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/row_pedidos_por_cliente_descripcion"
+        android:text="@string/txt_centro" />
+
+    <TextView
+        android:id="@+id/row_pedidos_por_cliente_cantidad"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/row_pedidos_por_cliente_centro"
+        android:layout_alignBottom="@+id/row_pedidos_por_cliente_centro"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/row_pedidos_por_cliente_centro"
+        android:text="@string/txt_cantidad" />
+
+    <TextView
+        android:id="@+id/row_pedidos_por_cliente_costo"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/row_pedidos_por_cliente_um"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/row_pedidos_por_cliente_um"
+        android:text="@string/txt_costo" />
+
+    <TextView
+        android:id="@+id/row_pedidos_por_cliente_um"
+        android:layout_width="@dimen/size80"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/row_pedidos_por_cliente_cantidad"
+        android:layout_alignBottom="@+id/row_pedidos_por_cliente_cantidad"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/row_pedidos_por_cliente_cantidad"
+        android:text="@string/txt_um" />
+
+</RelativeLayout>

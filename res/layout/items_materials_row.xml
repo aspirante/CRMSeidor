@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/size32">
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="@dimen/size120"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/items_materials_row_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_pedido"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/size10" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="@dimen/size120"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/frameLayout1" >
+
+        <TextView
+            android:id="@+id/items_materials_row_material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_material"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/size10" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="@dimen/size120"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/frameLayout2" >
+
+        <TextView
+            android:id="@+id/items_materials_row_cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_cantidad"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/size10" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="@dimen/size120"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/frameLayout3" >
+
+        <TextView
+            android:id="@+id/items_materials_row_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_precio"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/size10" />
+    </FrameLayout>
+
+</RelativeLayout>
+</LinearLayout>

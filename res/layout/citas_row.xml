@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="left"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/layoutcliente"
+        android:layout_width="@dimen/size80"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/citas_cliente_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_cliente"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layouthorai"
+        android:layout_width="@dimen/size80"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/layoutcliente" >
+
+        <TextView
+            android:id="@+id/citas_horai_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_horainicio"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layouthoraf"
+        android:layout_width="@dimen/size80"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/layouthorai" >
+
+        <TextView
+            android:id="@+id/citas_horaf_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_horafin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutasunto"
+        android:layout_width="@dimen/size240"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/layouthoraf" >
+
+        <TextView
+            android:id="@+id/citas_asunto_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/txt_asunto"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutlugar"
+        android:layout_width="@dimen/size96"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/layoutasunto" >
+
+        <TextView
+            android:id="@+id/citas_lugar_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_lugar"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/size96"
+        android:layout_height="@dimen/size30"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/layoutlugar" >
+
+        <TextView
+            android:id="@+id/citas_estatus_row"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_estatus" />
+
+    </FrameLayout>
+
+</RelativeLayout>

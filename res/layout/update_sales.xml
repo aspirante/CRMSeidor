@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/size16" >
+
+            <TextView
+                android:id="@+id/main_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_material" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <Spinner
+                android:id="@+id/update_sales_spinner"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/size48"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/size16"
+                android:layout_marginRight="@dimen/size16" />
+        </TableRow>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tableRow1"
+        android:layout_below="@+id/tableRow1"
+        android:layout_marginTop="47dp" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/productos_producto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/size16"
+                android:text="@string/txt_cantidad" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/update_sales_increment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size16"
+                android:background="@android:color/transparent"
+                android:src="@drawable/img_add" />
+
+            <EditText
+                android:id="@+id/update_sales_cantidad"
+                android:layout_width="@dimen/size48"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/size16"
+                android:enabled="true"
+                android:inputType="number"
+                android:text="0"
+                android:textSize="@dimen/size14" >
+            </EditText>
+        </TableRow>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableRow4"
+        android:layout_centerHorizontal="true" >
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/update_sales_accept"
+                android:layout_width="@dimen/size48"
+                android:layout_height="@dimen/size48"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_accept" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/update_sales_cancel"
+                android:layout_width="@dimen/size48"
+                android:layout_height="@dimen/size48"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_cancel" />
+        </TableRow>
+    </TableRow>
+
+    <ImageButton
+        android:id="@+id/update_sales_decrement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tableRow4"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/tableRow4"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_remove" />
+
+</RelativeLayout>

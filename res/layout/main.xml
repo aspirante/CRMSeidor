@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fragment_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_banner"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/banner"
+        android:gravity="right" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:src="@drawable/img_crm" />
+
+        <ImageView
+            android:id="@+id/main_btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size16"
+            android:layout_marginTop="@dimen/size16"
+            android:background="#00000000"
+            android:src="@drawable/ic_exit" />
+
+        <ImageView
+            android:id="@+id/main_btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size16"
+            android:layout_toLeftOf="@+id/main_btn_exit"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_home"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/img_logo_sap" />
+
+        <fragment
+            android:id="@+id/TabMenu"
+            android:name="com.crystalis.menubar.TabMenuFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_marginTop="@dimen/size16"
+            android:layout_toRightOf="@+id/imageView2"
+            tools:layout="@layout/tabmenu" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48"
+            android:layout_alignTop="@+id/TabMenu"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toLeftOf="@+id/main_btn_home"
+            android:layout_toRightOf="@+id/TabMenu" >
+
+            <TextView
+                android:id="@+id/main_user"
+                style="@style/Size14_Bold_White_Shadow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="TextView" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

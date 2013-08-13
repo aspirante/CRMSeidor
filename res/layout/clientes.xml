@@ -1,0 +1,726 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="left"
+    android:background="@drawable/fondo"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/clientes_lista_clientes"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_alignRight="@+id/relativeLayout1"
+        android:layout_below="@+id/relativeLayout1" >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/img_clientes" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clientes_lista_clientes"
+        android:layout_below="@+id/clientes_lista_clientes"
+        android:layout_marginTop="@dimen/size12"
+        android:src="@drawable/img_pedidos_por_cliente" />
+
+    <ListView
+        android:id="@+id/clientes_detalle_pedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/clientes_lista_clientes"
+        android:layout_below="@+id/RelativeLayout03"
+        android:layout_marginBottom="@dimen/size16" >
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout03"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/clientes_detalle_pedidos"
+        android:layout_below="@+id/imageView2" >
+
+        <FrameLayout
+            android:id="@+id/FrameLayout08"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView13"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_pedido"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout13"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout14"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView11"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout09"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout13"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView14"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_importe"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout10"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout09"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView8"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_moneda"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout12"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout10"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView06"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_factura"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout14"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/FrameLayout08"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView15"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_fecha"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/imageView1" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:animateLayoutChanges="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView1"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout7"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout5"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView2"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_nombre"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="@dimen/size160"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout7"
+            android:background="@color/GRAY_HEADER_LIST"
+            android:clipChildren="false" >
+
+            <TextView
+                android:id="@+id/TextView4"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_direccion"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout4"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/TextView5"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_estado" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/frameLayout3"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_rfc"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/clientes_btn_nuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignTop="@+id/clientes_btn_actualizar"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/clientes_btn_actualizar"
+        android:background="#00000000"
+        android:src="@drawable/img_nuevo_gray" />
+
+    <ImageButton
+        android:id="@+id/clientes_btn_actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="#00000000"
+        android:src="@drawable/img_actualizar_gray" />
+
+    <RelativeLayout
+        android:id="@+id/clientes_row_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignTop="@+id/relativeLayout1" >
+
+        <TextView
+            android:id="@+id/TextView9"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_cliente" />
+
+        <EditText
+            android:id="@+id/clientes_idcliente"
+            style="@style/Size12"
+            android:layout_width="@dimen/size100"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/TextView9"
+            android:ems="10"
+            android:inputType="textPersonName"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignRight="@+id/clientes_row_cliente"
+        android:layout_below="@+id/clientes_row_cliente" >
+
+        <TextView
+            android:id="@+id/TextView10"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_nombre" />
+
+        <EditText
+            android:id="@+id/clientes_nombre_cliente"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/TextView10"
+            android:ems="10"
+            android:inputType="textCapSentences|textPersonName"
+            android:nextFocusDown="@+id/clientes_calle"
+            >
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignRight="@+id/relativeLayout3"
+        android:layout_below="@+id/relativeLayout3" >
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_calle" />
+
+        <EditText
+            android:id="@+id/clientes_calle"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView8"
+            android:ems="10"
+            android:inputType="text|textCapSentences"
+            android:nextFocusDown="@+id/clientes_numero"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout5"
+        android:layout_alignRight="@+id/relativeLayout5"
+        android:layout_below="@+id/relativeLayout5" >
+
+        <TextView
+            android:id="@+id/TextView12"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_numero" />
+
+        <EditText
+            android:id="@+id/clientes_numero"
+            style="@style/Size12"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/TextView12"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/clientes_ciudad"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout4"
+        android:layout_alignRight="@+id/relativeLayout4"
+        android:layout_below="@+id/relativeLayout4" >
+
+        <TextView
+            android:id="@+id/TextView16"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_ciudad" />
+
+        <EditText
+            android:id="@+id/clientes_ciudad"
+            style="@style/Size12"
+            android:layout_width="@dimen/size160"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/TextView16"
+            android:ems="10"
+            android:inputType="text|textCapSentences"
+            android:nextFocusDown="@+id/clientes_distrito"
+            android:textSize="@dimen/size12" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout12"
+        android:layout_width="@dimen/size32"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@id/relativeLayout6"
+        android:layout_alignRight="@id/relativeLayout6"
+        android:layout_below="@id/relativeLayout6" >
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Distritro" />
+
+        <EditText
+            android:id="@+id/clientes_distrito"
+            style="@style/Size12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView3"
+            android:inputType="text"
+            android:nextFocusDown="@+id/clientes_cp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@id/relativeLayout12"
+        android:layout_alignRight="@id/relativeLayout12"
+        android:layout_below="@id/relativeLayout12" >
+
+        <TextView
+            android:id="@+id/textView16"
+            style="@style/Size14_Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/clientes_estado"
+            android:text="@string/txt_cp" />
+
+        <EditText
+            android:id="@+id/clientes_cp"
+            style="@style/Size12"
+            android:layout_width="@dimen/size100"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView16"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/clientes_rfc"
+            android:textSize="@dimen/size12" />
+
+        <ImageButton
+            android:id="@+id/clientes_btn_pais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_country" />
+
+        <TextView
+            android:id="@+id/clientes_pais"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size32"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/clientes_btn_pais"
+            android:background="@drawable/WHITE_SHADOW"
+            android:inputType="none" />
+
+        <ImageButton
+            android:id="@+id/clientes_btn_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/clientes_pais"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_state" />
+
+        <TextView
+            android:id="@+id/clientes_estado"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size32"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/clientes_btn_state"
+            android:background="@drawable/WHITE_SHADOW" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/clientes_btn_nuevo"
+        android:layout_alignLeft="@+id/clientes_btn_actualizar"
+        android:src="@drawable/line_blue" />
+
+    <ImageButton
+        android:id="@+id/clientes_btn_aceptar"
+        android:layout_width="@dimen/size48"
+        android:layout_height="@dimen/size48"
+        android:layout_above="@+id/imageView3"
+        android:layout_alignRight="@+id/imageView3"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_accept" />
+
+    <ImageButton
+        android:id="@+id/clientes_btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignRight="@+id/relativeLayout1"
+        android:layout_alignTop="@+id/clientes_btn_actualizar"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_barcode_gray" />
+
+    <ImageButton
+        android:id="@+id/clientes_btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignBottom="@+id/clientes_btn_aceptar"
+        android:layout_marginRight="@dimen/size16"
+        android:layout_toLeftOf="@+id/clientes_btn_scan"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_refresh" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout8"
+        android:layout_alignTop="@+id/clientes_detalle_pedidos" >
+
+        <TextView
+            android:id="@+id/textView20"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_rfc" />
+
+        <EditText
+            android:id="@+id/clientes_rfc"
+            style="@style/Size12_Bold"
+            android:layout_width="@dimen/size240"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView20"
+            android:ems="10"
+            android:inputType="text"
+            android:nextFocusDown="@+id/clientes_telefono" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout10"
+        android:layout_below="@+id/relativeLayout10" >
+
+        <TextView
+            android:id="@+id/textView22"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_telefono" />
+
+        <EditText
+            android:id="@+id/clientes_telefono"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView22"
+            android:ems="10"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/clientes_movil" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout11"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout9"
+        android:layout_below="@+id/relativeLayout9" >
+
+        <TextView
+            android:id="@+id/textView24"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_email" />
+
+        <EditText
+            android:id="@+id/clientes_email"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView24"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/clientes_btn_mapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/img_gps_gray"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:layout_alignLeft="@+id/relativeLayout7"
+        android:layout_below="@+id/relativeLayout7" >
+
+        <TextView
+            android:id="@+id/TextView17"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_movil" />
+
+        <EditText
+            android:id="@+id/clientes_movil"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/TextView17"
+            android:ems="10"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/clientes_email"
+            android:textSize="@dimen/size12" />
+    </RelativeLayout>
+
+<!--     <fragment -->
+<!--         android:id="@+id/map2" -->
+<!--         android:name="com.crystalis.view.MapViewFragmentv2" -->
+<!--         android:layout_width="200dp" -->
+<!--         android:layout_height="match_parent" -->
+<!--         android:layout_above="@+id/clientes_btn_mapa" -->
+<!--         android:layout_alignTop="@+id/relativeLayout7" -->
+<!--         android:layout_toLeftOf="@+id/clientes_btn_mapa" -->
+<!--         android:layout_toRightOf="@+id/relativeLayout7" /> -->
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/clientes_btn_mapa"
+        android:layout_below="@+id/relativeLayout10"
+        android:layout_toLeftOf="@+id/clientes_btn_mapa"
+        android:layout_toRightOf="@+id/relativeLayout7"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+</RelativeLayout>

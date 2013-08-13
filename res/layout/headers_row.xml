@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size32"
+        android:animateLayoutChanges="true" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <TextView
+                android:id="@+id/listorders_row_orderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_orderId"
+                android:textSize="@dimen/size10" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frameLayout2" >
+
+            <TextView
+                android:id="@+id/listorders_row_documentdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_fecha"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/size10"
+                android:typeface="normal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout6"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frameLayout5" >
+
+            <TextView
+                android:id="@+id/listorders_row_custumerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cliente"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/size10"
+                android:typeface="normal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frameLayout6" >
+
+            <TextView
+                android:id="@+id/listorders_row_importe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_importe"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/size10"
+                android:typeface="normal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frameLayout4" >
+
+            <TextView
+                android:id="@+id/listorders_row_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_moneda"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/size10"
+                android:typeface="normal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/frameLayout3" >
+
+            <TextView
+                android:id="@+id/listorders_row_no_factura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_no_factura"
+                android:textSize="@dimen/size10" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>	

@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_citas"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Citas"/>
+
+    <item
+        android:id="@+id/action_clientes"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Clientes"/>
+ 
+    <item
+        android:id="@+id/action_productos"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Productos"/>
+    
+    <item
+        android:id="@+id/action_ventas"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Ventas"/>
+
+    <item
+        android:id="@+id/action_reportes"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Reportes"/>
+    
+    
+<!--     <item -->
+<!--         android:id="@+id/action_settings" -->
+<!--         android:title="Settings" -->
+<!--         android:showAsAction="never" -->
+<!--         > -->
+<!--     </item> -->
+
+</menu> 

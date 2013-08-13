@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="WHITE">#FFFFFF</color>
+    <color name="BLACK">#000000</color>
+    <color name="SAP_BLUE_START">#33B5E5</color>
+    <color name="SAP_BLUE_END">#0099CC</color>
+    <color name="GRAY">#797F8C</color>
+    <color name="GRAY_HEADER_LIST">#bebebe</color>
+    <color name="GAY_LIGHT">#d3d3d3</color>
+    <drawable name="WHITE_SHADOW">#B3FFFFFF</drawable>
+    <drawable name="BLACK_SHADOW">#B3000000</drawable>
+</resources>

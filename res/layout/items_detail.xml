@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/order_detail_title"
+        style="@style/Size22_Bold_Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="293dp"
+        android:layout_marginTop="@dimen/size30"
+        android:text="Detalle de pedido"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <ListView
+        android:id="@+id/items_detail_list"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/order_detail_title"
+        android:layout_marginBottom="@dimen/size16"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_marginTop="@dimen/size30" >
+
+    </ListView>
+
+    <TextView
+        style="@style/Size18_Bold_Black_shodow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/items_detail_list"
+        android:layout_marginLeft="@dimen/size30"
+        android:layout_marginTop="@dimen/size100"
+        android:layout_toRightOf="@+id/items_detail_list"
+        android:text="@string/txt_material"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/BLACK" />
+
+    <TextView
+        android:id="@+id/order_detail_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size30"
+        android:layout_toRightOf="@+id/textView5"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/Size18_Bold_Black_shodow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size30"
+        android:layout_marginTop="@dimen/size30"
+        android:layout_toRightOf="@+id/items_detail_list"
+        android:text="@string/txt_cantidad"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/BLACK" />
+
+    <TextView
+        android:id="@+id/productos_row_precio"
+        style="@style/Size18_Bold_Black_shodow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="@dimen/size30"
+        android:text="@string/txt_costo"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/BLACK" />
+
+    <TextView
+        style="@style/Size18_Bold_Black_shodow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/productos_row_precio"
+        android:layout_below="@+id/productos_row_precio"
+        android:layout_marginTop="@dimen/size30"
+        android:text="@string/txt_centro"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/BLACK" />
+
+    <TextView
+        android:id="@+id/order_detail_cantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignLeft="@+id/order_detail_material"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/order_detail_costo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/productos_row_precio"
+        android:layout_alignBottom="@+id/productos_row_precio"
+        android:layout_alignLeft="@+id/order_detail_cantidad"
+        android:text="TextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/order_detail_row_cantidad"
+        android:layout_alignLeft="@+id/order_detail_costo"
+        android:text="TextView" />
+
+</RelativeLayout>

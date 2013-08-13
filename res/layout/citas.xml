@@ -1,0 +1,452 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="left"
+    android:background="@drawable/fondo"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/img_calendario" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/img_citas" />
+
+    <ListView
+        android:id="@+id/citas_detalle_citas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_below="@+id/RelativeLayout03"
+        android:layout_marginBottom="@dimen/size16" >
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout03"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/citas_detalle_citas"
+        android:layout_below="@+id/imageView2" >
+
+        <FrameLayout
+            android:id="@+id/layoutcliente"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/citas_cliente_row"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layouthoraf"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layouthorai"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/citas_horaf_row"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_horafin"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutasunto"
+            android:layout_width="@dimen/size240"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layouthoraf"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/citas_asunto_row"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_asunto"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layouthorai"
+            android:layout_width="@dimen/size80"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layoutcliente"
+            android:background="@color/GRAY_HEADER_LIST" >
+
+            <TextView
+                android:id="@+id/citas_horai_row"
+                style="@style/Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txt_horainicio"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size22"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/imageView1" >
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/citas_btn_nuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/citas_btn_actualizar"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_toRightOf="@+id/citas_btn_actualizar"
+        android:background="#00000000"
+        android:src="@drawable/nuevo_gray" />
+
+    <ImageButton
+        android:id="@+id/citas_btn_actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="#00000000"
+        android:src="@drawable/actualizar_gray" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/citas_btn_actualizar"
+        android:layout_below="@+id/citas_btn_nuevo"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/line_blue" />
+
+    <CalendarView
+        android:id="@+id/citas_calendario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutAsunto"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/relativeLayout4"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_below="@+id/relativeLayout3" >
+
+        <TextView
+            android:id="@+id/TextViewAsunto"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_asunto" />
+
+        <EditText
+            android:id="@+id/citas_txt_asunto"
+            style="@style/Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size32"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@id/TextViewAsunto"
+            android:ems="10"
+            android:inputType="text" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignRight="@+id/relativeLayout3"
+        android:layout_below="@id/RelativeLayoutAsunto" >
+
+        <TextView
+            android:id="@+id/TextViewLugar"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_lugar" />
+
+        <EditText
+            android:id="@+id/citas_txt_lugar"
+            style="@style/Size12"
+            android:layout_width="@dimen/size240"
+            android:layout_height="@dimen/size32"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@id/TextViewLugar"
+            android:ems="10"
+            android:inputType="text" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/citas_layout_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/relativeLayout2"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_below="@id/imageView3"
+        android:layout_marginTop="@dimen/size16" >
+
+        <TextView
+            android:id="@+id/citas_estatus_row"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_cliente" />
+
+        <EditText
+            android:id="@+id/citas_txt_cliente"
+            style="@style/Size12"
+            android:layout_width="@dimen/size160"
+            android:layout_height="@dimen/size32"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@id/citas_estatus_row" >
+        </EditText>
+
+        <Spinner
+            android:id="@+id/citas_clientes_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/citas_txt_cliente"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_below="@+id/citas_layout_cliente" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_fecha" />
+
+        <TextView
+            android:id="@+id/citas_fecha"
+            style="@style/Size12_Bold_Black"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/citas_btn_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_toRightOf="@+id/citas_fecha"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_fecha" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/relativeLayout2"
+        android:layout_alignRight="@+id/citas_layout_cliente"
+        android:layout_below="@+id/relativeLayout2" >
+
+        <TextView
+            android:id="@+id/TextView10"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_horainicio" />
+
+        <ImageButton
+            android:id="@+id/citas_btn_hora_fin"
+            android:layout_width="@dimen/size48"
+            android:layout_height="@dimen/size48"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_clock" />
+
+        <ImageButton
+            android:id="@+id/citas_btn_hora_inicio"
+            android:layout_width="@dimen/size48"
+            android:layout_height="@dimen/size48"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/TextView4"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_clock" />
+
+        <TextView
+            android:id="@+id/citas_txt_horainicio"
+            style="@style/Size12_Bold_Black"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/TextView10"
+            android:layout_toLeftOf="@+id/citas_btn_hora_inicio"
+            android:ems="10"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/citas_txt_horafin"
+            style="@style/Size12_Bold_Black"
+            android:layout_width="@dimen/size60"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/TextView10"
+            android:layout_toLeftOf="@+id/citas_btn_hora_fin"
+            android:ems="10"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/TextView4"
+            style="@style/Size14_Bold"
+            android:layout_width="@dimen/size80"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/citas_txt_horafin"
+            android:layout_toLeftOf="@+id/citas_txt_horafin"
+            android:text="@string/txt_horafin" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/citas_btn_alta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignTop="@+id/citas_btn_nuevo"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_accept" />
+
+    <RelativeLayout
+        android:id="@+id/citas_layout_estatus"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size48"
+        android:layout_alignLeft="@+id/relativeLayout4"
+        android:layout_alignRight="@+id/relativeLayout4"
+        android:layout_below="@+id/relativeLayout4" >
+
+        <TextView
+            android:id="@+id/citas_label_estatus"
+            style="@style/Size14_Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_estatus" />
+
+        <TextView
+            android:id="@+id/citas_txt_estatus"
+            style="@style/Size14"
+            android:layout_width="@dimen/size100"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size10"
+            android:layout_toLeftOf="@+id/citas_btn_estatus"
+            android:layout_toRightOf="@+id/citas_label_estatus" />
+
+        <ImageButton
+            android:id="@+id/citas_btn_estatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_edit" />
+
+        <ImageButton
+            android:id="@+id/citas_btn_acept_estatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/citas_txt_estatus"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_accept" />
+
+        <TextView
+            android:id="@+id/citas_txt_view_estatus"
+            style="@style/Size12_Bold_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="43dp"
+            android:layout_toRightOf="@+id/citas_btn_estatus"
+            android:text="@string/txt_estatus" />
+
+        <Spinner
+            android:id="@+id/citas_spiner_estatus"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size48"
+            android:layout_below="@+id/citas_txt_view_estatus"
+            android:layout_toLeftOf="@+id/citas_btn_acept_estatus"
+            android:layout_toRightOf="@+id/citas_btn_estatus"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/citas_layout_estatus"
+        android:layout_alignRight="@+id/citas_layout_estatus"
+        android:layout_below="@+id/citas_layout_estatus"
+        android:layout_marginLeft="22dp" >
+
+    </RelativeLayout>
+
+</RelativeLayout>
