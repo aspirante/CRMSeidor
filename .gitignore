@@ -3,7 +3,6 @@
 #################
 
 *.pydevproject
-.project
 .metadata
 bin/
 tmp/
@@ -11,8 +10,14 @@ tmp/
 *.bak
 *.swp
 *~.nib
+
+# Local configuration file (sdk path, etc)
 local.properties
+
+# Eclipse project files
 .classpath
+.project
+
 .settings/
 .loadpath
 
@@ -28,6 +33,23 @@ local.properties
 # PDT-specific
 .buildpath
 
+
+#################
+## Android
+#################
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+gen/
 
 #################
 ## Visual Studio
