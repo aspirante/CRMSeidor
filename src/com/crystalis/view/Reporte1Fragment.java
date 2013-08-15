@@ -8,17 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.androidplot.xy.XYPlot;
+import com.crystalis.dataconnection.DataConnection;
+import com.crystalis.getData.DownloadData;
+import com.crystalis.interfaces.IMain;
+import com.crystalis.listeners.AsyntaskCallBackListeners;
+import com.crystalis.tools.Parser;
  
 /**
 * A straightforward example of using AndroidPlot to plot some data.
 */
 public class Reporte1Fragment extends Fragment{
  
-    private XYPlot plot;
+//    private XYPlot plot;
     private View viewMain;
 	private WebView webview;
 	private WebSettings webSettings;
@@ -112,6 +115,9 @@ public class Reporte1Fragment extends Fragment{
             + "  <body>"
             + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
             + "  </body>" + "</html>";
+	private Parser tools;
+	private DownloadData download;
+	private String url;
     
  
     @Override
@@ -162,7 +168,8 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-			draw(columnChart);
+//			draw(columnChart);
+		tools.getDataReport1();
 		}
 	});
 	 
@@ -206,6 +213,9 @@ public class Reporte1Fragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+    	tools = new Parser(getActivity());
+    	url = getArguments().getString(IMain.URL_KEY);
+
  
         // fun little snippet that prevents users from taking screenshots
         // on ICS+ devices :-)
@@ -251,4 +261,32 @@ public class Reporte1Fragment extends Fragment{
         plot.getGraphWidget().setDomainLabelOrientation(-45);*/
  
     }
+    
+    public void pedidos(){
+
+	    new DownloadData(getActivity(), tools.updateUrl( DataConnection.SALESORDER_GETWAY_JSON, url), DataConnection.user, DataConnection.pwd, " Pedidos ... ", new AsyntaskCallBackListeners() {
+
+			@Override
+			public void onTaskDone(String data) {
+			    
+			    saveData(data);
+
+			}
+			
+		    }).execute();
+  }
+
+	public void saveData(String data) {
+
+		tools.HeadersJsonToDB(data);
+		
+	}
+    
+	@Override
+		public void onStart() {
+			// TODO Auto-generated method stub
+			super.onStart();
+			pedidos();
+
+		}
 }

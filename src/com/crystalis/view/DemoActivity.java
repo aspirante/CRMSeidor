@@ -202,6 +202,7 @@ public class DemoActivity extends FragmentActivity implements ChangeFragmenListe
 		System.out.println("reportes fragmentActive");
 
 		ReportsFragment reports = new ReportsFragment();
+		reports.setArguments(args);
 		selectFragmentAndSwitch(reports, null, AnimationType.LeftToRight);
 
 	    break;

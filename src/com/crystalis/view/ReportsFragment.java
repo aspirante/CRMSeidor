@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.crystalis.interfaces.IMain;
 import com.crystalis.menubar.AnimationType;
 import com.crystalis.menubar.FragmentSwapManager;
 
@@ -21,6 +22,8 @@ public class ReportsFragment extends Fragment {
 	private Button btn_report3;
 	private Button btn_report4;
 	private Fragment bodyFragment;
+	private String url;
+	private Bundle args;
 	
 
 	@Override
@@ -34,6 +37,7 @@ public class ReportsFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Reporte1Fragment report1 = new Reporte1Fragment();
+				report1.setArguments(args);
 			    selectFragmentAndSwitch(report1, null, AnimationType.LeftToRight);
 
 
@@ -62,9 +66,9 @@ public class ReportsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-
-
-
+    	url = getArguments().getString(IMain.URL_KEY);
+    	args = new Bundle();
+    	args.putString(IMain.URL_KEY, url);
     }
 
 

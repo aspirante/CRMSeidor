@@ -21,10 +21,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-import com.crystalis.adapters.ItemMaterialAdapter;
+import com.crystalis.db.DataSource;
 import com.crystalis.interfaces.IMain;
 import com.crystalis.listeners.Response;
 import com.crystalis.model.Country;
@@ -40,6 +42,16 @@ import com.crystalis.model.Region;
 public class Parser {
 
 	private Response response;
+	private DataSource datasource;
+	
+	 public Parser(Context context) {
+		    datasource = new DataSource(context);
+		    datasource.open();
+	 }
+	 
+	 public Parser() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public ArrayList<Header> HeadersJson(String Json) {
 		
@@ -68,6 +80,50 @@ public class Parser {
 		
 
 	return SalesOrdersHeaders;
+	}
+	
+	public void HeadersJsonToDB(String Json) {
+		
+	datasource.open();
+	
+	JSONObject JSONData;
+	JSONObject JSONRoot;
+
+
+	try {
+	    JSONData = new JSONObject (Json);
+	    JSONRoot = JSONData.getJSONObject(IMain.ROOT_JSON);
+	    JSONArray resultsArray = JSONRoot.getJSONArray(IMain.RESULTS_JSON);
+	    for(int i=0; i < resultsArray.length(); i++){
+		JSONObject json_data = resultsArray.getJSONObject(i);
+		response = new Header().jsonToObject(json_data.toString());
+		Header infoServer = (Header) response;
+		datasource.insertSale(infoServer.getOrderId(), infoServer.getDocumentType(), infoServer.getDocumentDate(), infoServer.getCustomerId(), 
+					     infoServer.getSalesOrg(), infoServer.getDistChannel(), infoServer.getDivision(), infoServer.getOrderValue(), 
+					     infoServer.getCurrency(), infoServer.getInvoice());
+
+	    }		    
+	} catch (JSONException e) {
+	    e.printStackTrace();
+	}
+	
+	datasource.close();
+	
+	System.out.println("data saved into DB ");
+}
+	
+	public void getDataReport1(){
+		datasource.open();
+		Cursor cursor = datasource.getDataSalesToReport();
+		if(cursor.isFirst()){
+				do{
+					String dato1 = cursor.getColumnName(cursor.getColumnIndex("customerid"));
+					
+					if(IMain.DEBUG)
+						System.out.println("getDataReport1: customerid: "+dato1);
+				}while(cursor.moveToNext());
+		}
+		datasource.close();
 	}
 	
 	public ArrayList<Header> FilterHeaderJson(String json) {
