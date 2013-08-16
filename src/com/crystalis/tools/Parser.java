@@ -28,6 +28,7 @@ import android.util.Log;
 
 import com.crystalis.db.DataSource;
 import com.crystalis.interfaces.IMain;
+import com.crystalis.interfacesDB.ITableNames;
 import com.crystalis.listeners.Response;
 import com.crystalis.model.Country;
 import com.crystalis.model.Customer;
@@ -46,7 +47,6 @@ public class Parser {
 	
 	 public Parser(Context context) {
 		    datasource = new DataSource(context);
-		    datasource.open();
 	 }
 	 
 	 public Parser() {
@@ -89,7 +89,18 @@ public class Parser {
 	JSONObject JSONData;
 	JSONObject JSONRoot;
 
+	boolean resp = datasource.isEmptyTableSales(ITableNames.TABLE_REPORT_SALESORDER);
+	
+	System.out.println("resp: "+resp);
 
+	if(!resp){
+		
+		datasource.clearTable(ITableNames.TABLE_REPORT_SALESORDER);
+		datasource.createTableSales();
+	}
+	datasource.close();
+	
+	datasource.open();
 	try {
 	    JSONData = new JSONObject (Json);
 	    JSONRoot = JSONData.getJSONObject(IMain.ROOT_JSON);
@@ -109,22 +120,66 @@ public class Parser {
 	
 	datasource.close();
 	
-	System.out.println("data saved into DB ");
+	if(IMain.DEBUG)
+		System.out.println("data saved into DB ");
 }
 	
-	public void getDataReport1(){
+	public String[] getCustomersReport1(){
+		
+		String[] customers = null;
+		
 		datasource.open();
+		
 		Cursor cursor = datasource.getDataSalesToReport();
-		if(cursor.isFirst()){
-				do{
-					String dato1 = cursor.getColumnName(cursor.getColumnIndex("customerid"));
-					
-					if(IMain.DEBUG)
-						System.out.println("getDataReport1: customerid: "+dato1);
-				}while(cursor.moveToNext());
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+			
+			if(IMain.DEBUG)
+				System.out.println("getDataReport1: cursor: "+cursor.getCount());
+			customers = new String [cursor.getCount()];
+
+			int cont = 0;
+			while(!cursor.isAfterLast() ){
+				customers [cont++]  = cursor.getString(cursor.getColumnIndex("customerid"));
+				cursor.moveToNext();
+			}	
 		}
 		datasource.close();
+		cursor.close();
+		
+		return customers;
 	}
+	
+	public String[] getTotalReport1(){
+		
+		String[] total = null;
+		
+		datasource.open();
+		
+		Cursor cursor = datasource.getDataSalesToReport();
+
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+			
+			if(IMain.DEBUG)
+				System.out.println("getDataReport1: cursor: "+cursor.getCount());
+			total = new String [cursor.getCount()];
+
+			int cont = 0;
+			while(!cursor.isAfterLast()){
+						total [cont++]  = cursor.getString(cursor.getColumnIndex("total"));
+						cursor.moveToNext();
+			}
+			
+			}
+		datasource.close();
+		cursor.close();
+		
+		return total;
+	}
+	
 	
 	public ArrayList<Header> FilterHeaderJson(String json) {
 		

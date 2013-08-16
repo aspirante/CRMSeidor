@@ -56,7 +56,7 @@ public class Reporte1Fragment extends Fragment{
             + "  </head>"
             + "  <body>"
             + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
-            + "  </body>" + "</html>";
+            + "  </body>" + "</html>";  
     
     String lineChart = "<html>"
             + "  <head>"
@@ -168,8 +168,35 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-//			draw(columnChart);
-		tools.getDataReport1();
+			String[] customers = tools.getCustomersReport1();			
+			String[] total	   = tools.getTotalReport1();			
+			String columns = null ;			
+
+			String x =",";			
+			
+			for(int a = 0 ; a < customers.length; a ++){
+	
+				System.out.println("a: "+ a +" row: "+"['"+customers[a]+"',"+total[a]+"]");
+
+				if( a == 0 )				
+					columns = "['"+customers[a]+"',"+total[a]+"]" + x;					
+				else{
+					columns += "['"+customers[a]+"',"+total[a]+"]";
+					if( a < customers.length - 1 )
+						columns += x;					
+				}
+				
+			}
+			
+
+			draw(setDataToDraw(columns));
+		
+//			System.out.println(" htmlFix: " + htmlFix);
+			
+			
+
+			System.out.println("columns: "+columns);
+		
 		}
 	});
 	 
@@ -203,7 +230,41 @@ public class Reporte1Fragment extends Fragment{
         return viewMain;
     }
     
-    public void draw(String content){
+    public String setDataToDraw(String columns) {
+   	
+    	
+        String columnChart2 = 
+        		"<html>"
+                + "  <head>"
+                + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
+                + "    <script type=\"text/javascript\">"
+                + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
+                + "      google.setOnLoadCallback(drawChart);"
+                + "      function drawChart() {"
+                + "        var data = google.visualization.arrayToDataTable(["
+                + "          ['Cliente', 'Pedidos'],"
+//                + "          ['2010'   ,  1000], ['2011'   ,  1170], ['2012'   ,  660 ], ['2013'   ,  1030]"
+				+ columns
+                + "        ]);"
+                + "        var options = {"
+                + "          title: 'Ventas',"
+                + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
+                + "        };"
+                + "        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));"
+                + "        chart.draw(data, options);"
+                + "      }"
+                + "    </script>"
+                + "  </head>"
+                + "  <body>"
+                + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
+                + "  </body>" 
+                + "</html>";
+        
+        return columnChart2;
+        
+	}
+
+	public void draw(String content){
     	
         webview.requestFocusFromTouch();
         webview.loadDataWithBaseURL( "file:///android_asset/", content, "text/html", "utf-8", null );  
@@ -213,7 +274,7 @@ public class Reporte1Fragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-    	tools = new Parser(getActivity());
+    	tools = new Parser(getActivity().getApplicationContext());
     	url = getArguments().getString(IMain.URL_KEY);
 
  

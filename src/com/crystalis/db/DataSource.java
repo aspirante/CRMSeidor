@@ -6,7 +6,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.crystalis.interfaces.IMain;
 import com.crystalis.interfacesDB.IColumnNamesTableReportSalesOrder;
+import com.crystalis.interfacesDB.IScriptTables;
+import com.crystalis.interfacesDB.ISettingsDB;
 import com.crystalis.interfacesDB.ITableNames;
 
 public class DataSource {
@@ -50,11 +53,24 @@ public class DataSource {
 		  database.insert(ITableNames.TABLE_REPORT_SALESORDER, null, values);
 	  }
 	  
-	  private String query = "SELECT customerid,count(*) as sales, sum(ordervalue) as total FROM salesorder where invoice != '' group by customerid";
+	  private String query = "SELECT customerid,count(*) as total, sum(ordervalue) as suma FROM salesorder where invoice != '' group by customerid";
 	  
 	public Cursor getDataSalesToReport() {
 		return database.rawQuery(query,null);
 	}
-	  
+	
+	public boolean isEmptyTableSales( String name) {
+		
+		Cursor cursor = database.rawQuery("select count(*) from " + name,null);
+		
+		if(cursor.getCount() == IMain.EMPTY)
+			return true;
+		return false;
+		
+	}
+	
+	public void clearTable( String name ) { database.execSQL(ISettingsDB.DROPTABLE_TEXT + name); }
+	
+	public void createTableSales() { database.execSQL(IScriptTables.TABLE_SALES_REPORT); }
 
 }
