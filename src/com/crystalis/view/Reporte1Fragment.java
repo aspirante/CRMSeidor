@@ -30,93 +30,11 @@ public class Reporte1Fragment extends Fragment{
 	private ImageButton btn_report3;
 	
 	
-	
-    String columnChart = "<html>"
-            + "  <head>"
-            + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
-            + "    <script type=\"text/javascript\">"
-            + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
-            + "      google.setOnLoadCallback(drawChart);"
-            + "      function drawChart() {"
-            + "        var data = google.visualization.arrayToDataTable(["
-            + "          ['Year', 'Sales', 'Expenses'],"
-            + "          ['2010',  1000,      400],"
-            + "          ['2011',  1170,      460],"
-            + "          ['2012',  660,       1120],"
-            + "          ['2013',  1030,      540]"
-            + "        ]);"
-            + "        var options = {"
-            + "          title: 'Truiton Performance',"
-            + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
-            + "        };"
-            + "        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));"
-            + "        chart.draw(data, options);"
-            + "      }"
-            + "    </script>"
-            + "  </head>"
-            + "  <body>"
-            + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
-            + "  </body>" + "</html>";  
-    
-    String lineChart = "<html>"
-            + "  <head>"
-            + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
-            + "    <script type=\"text/javascript\">"
-            + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
-            + "      google.setOnLoadCallback(drawChart);"
-            + "      function drawChart() {"
-            + "        var data = google.visualization.arrayToDataTable(["
-            + "          ['Year', 'Sales', 'Expenses'],"
-            + "          ['2010',  1000,      400],"
-            + "          ['2011',  1170,      460],"
-            + "          ['2012',  660,       1120],"
-            + "          ['2013',  1030,      540]"
-            + "        ]);"
-            + "        var options = {"
-            + "          title: 'Truiton Performance',"
-            + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
-            + "        };"
-            + "        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));"
-            + "        chart.draw(data, options);"
-            + "      }"
-            + "    </script>"
-            + "  </head>"
-            + "  <body>"
-            + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
-            + "  </body>" + "</html>";
-    
-    
-    String comboChart = "<html>"
-            + "  <head>"
-            + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
-            + "    <script type=\"text/javascript\">"
-            + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
-            + "      google.setOnLoadCallback(drawChart);"
-            + "      function drawChart() {"
-            + "        var data = google.visualization.arrayToDataTable(["
-            + "          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],"
-            + "          ['2004/05',  165,      938,         522,             998,           450,      614.6],"
-            + "          ['2006/07',  157,      1167,        587,             807,           397,      623],"
-            + "          ['2007/08',  139,      1110,        615,             968,           215,      609.4],"
-            + "          ['2008/09',  136,      691,         629,             1026,          366,      569.6]"
-            + "        ]);"
-            + "        var options = {"
-            + "          title: 'Monthly Coffee Production by Country',"
-            + "			  vAxis: {title: 'Cups'},"
-            + "          hAxis: {title: 'Month'},"
-            + "			 seriesType: 'bars',"
-            + " 		 series: {5: {type: 'line'}}"
-            + "        };"
-            + "        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));"
-            + "        chart.draw(data, options);"
-            + "      }"
-            + "    </script>"
-            + "  </head>"
-            + "  <body>"
-            + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
-            + "  </body>" + "</html>";
+	String typeColumnChart = "ColumnChart";
+	String typeLineChart   = "LineChart";
+	String typeComboChart  = "AreaChart";
+   
 	private Parser tools;
-	private DownloadData download;
 	private String url;
     
  
@@ -125,78 +43,17 @@ public class Reporte1Fragment extends Fragment{
 	
 	viewMain = inflater.inflate(R.layout.simple_xy_plot_example, container, false);
 
-/*        // initialize our XYPlot reference:
-        plot = (XYPlot) viewMain.findViewById(R.id.mySimpleXYPlot);
- 
-        // Create a couple arrays of y-values to plot:
-        Number[] series1Numbers = {1, 8, 5, 2, 7, 4};
-        Number[] series2Numbers = {4, 6, 3, 8, 2, 10};
- 
-        // Turn the above arrays into XYSeries':
-        XYSeries series1 = new SimpleXYSeries(
-                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
-                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-                "Series1");                             // Set the display title of the series
- 
-        // same as above
-        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
- 
-        // Create a formatter to use for drawing a series using LineAndPointRenderer
-        // and configure it from xml:
-        LineAndPointFormatter series1Format = new LineAndPointFormatter();
-        series1Format.setPointLabelFormatter(new PointLabelFormatter());
-        series1Format.configure(getActivity(),
-                R.xml.line_point_formatter_with_plf1);
- 
-        // add a new series' to the xyplot:
-        plot.addSeries(series1, series1Format);
- 
-        // same as above:
-        LineAndPointFormatter series2Format = new LineAndPointFormatter();
-        series2Format.setPointLabelFormatter(new PointLabelFormatter());
-        series2Format.configure(getActivity(),
-                R.xml.line_point_formatter_with_plf2);
-        plot.addSeries(series2, series2Format);
- 
-        // reduce the number of range labels
-        plot.setTicksPerRangeLabel(3);*/
-	
 	 webview = (WebView) viewMain.findViewById(R.id.webView1);
 	 btn_report1 = (ImageButton) viewMain.findViewById(R.id.sample_xy_plot_btn_report1);
 	 btn_report1.setOnClickListener(new View.OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
-
-			String[] customers = tools.getCustomersReport1();			
-			String[] total	   = tools.getTotalReport1();			
-			String columns = null ;			
-
-			String x =",";			
-			
-			for(int a = 0 ; a < customers.length; a ++){
 	
-				System.out.println("a: "+ a +" row: "+"['"+customers[a]+"',"+total[a]+"]");
+			String dataColumns = getDataSales();
 
-				if( a == 0 )				
-					columns = "['"+customers[a]+"',"+total[a]+"]" + x;					
-				else{
-					columns += "['"+customers[a]+"',"+total[a]+"]";
-					if( a < customers.length - 1 )
-						columns += x;					
-				}
-				
-			}
-			
-
-			draw(setDataToDraw(columns));
-		
-//			System.out.println(" htmlFix: " + htmlFix);
-			
-			
-
-			System.out.println("columns: "+columns);
-		
+			draw(setDataToDraw(dataColumns, typeColumnChart, "Ventas", "Cliente", "Pedidos"));
+					
 		}
 	});
 	 
@@ -206,7 +63,11 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-			draw(lineChart);
+			String dataColumns = getDataSales();
+
+			draw(setDataToDraw(dataColumns, typeLineChart, "Ventas", "Cliente", "Pedidos"));
+
+
 		}
 	});
 	 
@@ -216,7 +77,10 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-			draw(comboChart);
+			String dataColumns = getDataSales();
+
+			draw(setDataToDraw(dataColumns, typeComboChart, "Ventas", "Cliente", "Pedidos"));
+
 		}
 	});
 	 
@@ -229,8 +93,38 @@ public class Reporte1Fragment extends Fragment{
         
         return viewMain;
     }
+
     
-    public String setDataToDraw(String columns) {
+    public String getDataSales(){
+    	
+		String[] customers = tools.getCustomersReport1();			
+		String[] total	   = tools.getTotalReport1();			
+		String data = null ;			
+
+		String x =",";			
+		
+		for(int a = 0 ; a < customers.length; a ++){
+
+			System.out.println("a: "+ a +" row: "+"['"+customers[a]+"',"+total[a]+"]");
+
+			if( a == 0 )				
+				data = "['"+customers[a]+"',"+total[a]+"]" + x;					
+			else{
+				data += "['"+customers[a]+"',"+total[a]+"]";
+				if( a < customers.length - 1 )
+					data += x;					
+			}
+			
+		}
+		
+		if(IMain.DEBUG)
+			System.out.println("columns: "+data);
+
+		
+		return data;
+    }
+    
+    public String setDataToDraw(String dataColumns, String type,String title, String nameColumn1, String nameColumn2) {
    	
     	
         String columnChart2 = 
@@ -242,15 +136,15 @@ public class Reporte1Fragment extends Fragment{
                 + "      google.setOnLoadCallback(drawChart);"
                 + "      function drawChart() {"
                 + "        var data = google.visualization.arrayToDataTable(["
-                + "          ['Cliente', 'Pedidos'],"
+                + "          ['"+nameColumn1+"', '"+nameColumn2+"'],"
 //                + "          ['2010'   ,  1000], ['2011'   ,  1170], ['2012'   ,  660 ], ['2013'   ,  1030]"
-				+ columns
+				+ dataColumns
                 + "        ]);"
                 + "        var options = {"
-                + "          title: 'Ventas',"
-                + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
+                + "          title: '"+title+"',"
+                + "          hAxis: {title: '"+nameColumn1+"', titleTextStyle: {color: 'red'}}"
                 + "        };"
-                + "        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));"
+                + "        var chart = new google.visualization."+type+"(document.getElementById('chart_div'));"
                 + "        chart.draw(data, options);"
                 + "      }"
                 + "    </script>"
@@ -276,50 +170,6 @@ public class Reporte1Fragment extends Fragment{
         super.onCreate(savedInstanceState);
     	tools = new Parser(getActivity().getApplicationContext());
     	url = getArguments().getString(IMain.URL_KEY);
-
- 
-        // fun little snippet that prevents users from taking screenshots
-        // on ICS+ devices :-)
-//        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
- 
-/*        setContentView(R.layout.simple_xy_plot_example);
- 
-        // initialize our XYPlot reference:
-        plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
- 
-        // Create a couple arrays of y-values to plot:
-        Number[] series1Numbers = {1, 8, 5, 2, 7, 4};
-        Number[] series2Numbers = {4, 6, 3, 8, 2, 10};
- 
-        // Turn the above arrays into XYSeries':
-        XYSeries series1 = new SimpleXYSeries(
-                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
-                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-                "Series1");                             // Set the display title of the series
- 
-        // same as above
-        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
- 
-        // Create a formatter to use for drawing a series using LineAndPointRenderer
-        // and configure it from xml:
-        LineAndPointFormatter series1Format = new LineAndPointFormatter();
-        series1Format.setPointLabelFormatter(new PointLabelFormatter());
-        series1Format.configure(getApplicationContext(),
-                R.xml.line_point_formatter_with_plf1);
- 
-        // add a new series' to the xyplot:
-        plot.addSeries(series1, series1Format);
- 
-        // same as above:
-        LineAndPointFormatter series2Format = new LineAndPointFormatter();
-        series2Format.setPointLabelFormatter(new PointLabelFormatter());
-        series2Format.configure(getApplicationContext(),
-                R.xml.line_point_formatter_with_plf2);
-        plot.addSeries(series2, series2Format);
- 
-        // reduce the number of range labels
-        plot.setTicksPerRangeLabel(3);
-        plot.getGraphWidget().setDomainLabelOrientation(-45);*/
  
     }
     
