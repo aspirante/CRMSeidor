@@ -5,6 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="size12">12dp</dimen>
     <dimen name="size14">14dp</dimen>
+    <dimen name="size15">15dp</dimen>
     <dimen name="size18">18dp</dimen>
     <dimen name="size22">22dp</dimen>
             

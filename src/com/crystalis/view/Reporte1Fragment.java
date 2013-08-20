@@ -21,7 +21,6 @@ import com.crystalis.tools.Parser;
 */
 public class Reporte1Fragment extends Fragment{
  
-//    private XYPlot plot;
     private View viewMain;
 	private WebView webview;
 	private WebSettings webSettings;
@@ -41,7 +40,7 @@ public class Reporte1Fragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	
-	viewMain = inflater.inflate(R.layout.simple_xy_plot_example, container, false);
+	viewMain = inflater.inflate(R.layout.report_sales_layout, container, false);
 
 	 webview = (WebView) viewMain.findViewById(R.id.webView1);
 	 btn_report1 = (ImageButton) viewMain.findViewById(R.id.sample_xy_plot_btn_report1);
@@ -141,8 +140,10 @@ public class Reporte1Fragment extends Fragment{
 				+ dataColumns
                 + "        ]);"
                 + "        var options = {"
+                + "			width: '100%',"
+                + "			height: '100%',"
                 + "          title: '"+title+"',"
-                + "          hAxis: {title: '"+nameColumn1+"', titleTextStyle: {color: 'red'}}"
+                + "          hAxis: {title: '"+nameColumn1+"', titleTextStyle: {color: 'red'}, textStyle: {fontSize:7}}"
                 + "        };"
                 + "        var chart = new google.visualization."+type+"(document.getElementById('chart_div'));"
                 + "        chart.draw(data, options);"
@@ -150,7 +151,7 @@ public class Reporte1Fragment extends Fragment{
                 + "    </script>"
                 + "  </head>"
                 + "  <body>"
-                + "    <div id=\"chart_div\" style=\"width: 700px; height: 380px;\"></div>"
+                + "    <div id='chart_div'style=\"width: 100%; height: 100%; \"></div>"
                 + "  </body>" 
                 + "</html>";
         
