@@ -36,9 +36,9 @@ public class ReportsFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				Reporte1Fragment report1 = new Reporte1Fragment();
-				report1.setArguments(args);
-			    selectFragmentAndSwitch(report1, null, AnimationType.LeftToRight);
+				ReportSalesFragment sales = new ReportSalesFragment();
+				sales.setArguments(args);
+			    selectFragmentAndSwitch(sales, null, AnimationType.LeftToRight);
 
 
 			}
@@ -49,8 +49,8 @@ public class ReportsFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-//				Reporte1Fragment report1 = new Reporte1Fragment();
-//			    selectFragmentAndSwitch(report1, null, AnimationType.LeftToRight);				
+				ReportInvoicedFragment invoiced = new ReportInvoicedFragment();
+			    selectFragmentAndSwitch(invoiced, null, AnimationType.LeftToRight);				
 			}
 		});
     	btn_report3 =  (Button) viewMain.findViewById(R.id.reportmain_btn_report3);

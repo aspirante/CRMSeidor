@@ -19,7 +19,7 @@ import com.crystalis.tools.Parser;
 /**
 * A straightforward example of using AndroidPlot to plot some data.
 */
-public class Reporte1Fragment extends Fragment{
+public class ReportInvoicedFragment extends Fragment{
  
     private View viewMain;
 	private WebView webview;
@@ -49,7 +49,7 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 	
-			String dataColumns = getDataSales();
+			String dataColumns = getData();
 
 			draw(setDataToDraw(dataColumns, typeColumnChart, "Ventas", "Cliente", "Pedidos"));
 					
@@ -62,7 +62,7 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-			String dataColumns = getDataSales();
+			String dataColumns = getData();
 
 			draw(setDataToDraw(dataColumns, typeLineChart, "Ventas", "Cliente", "Pedidos"));
 
@@ -76,7 +76,7 @@ public class Reporte1Fragment extends Fragment{
 		@Override
 		public void onClick(View v) {
 
-			String dataColumns = getDataSales();
+			String dataColumns = getData();
 
 			draw(setDataToDraw(dataColumns, typeComboChart, "Ventas", "Cliente", "Pedidos"));
 
@@ -94,34 +94,18 @@ public class Reporte1Fragment extends Fragment{
     }
 
     
-    public String getDataSales(){
-    	
-		String[] customers = tools.getCustomersReport1();			
-		String[] total	   = tools.getTotalReport1();			
-		String data = null ;			
+    protected String getData() {
 
-		String x =",";			
-		
-		for(int a = 0 ; a < customers.length; a ++){
 
-			System.out.println("a: "+ a +" row: "+"['"+customers[a]+"',"+total[a]+"]");
+		String data = "['Facturados',"+tools.getInvoiced()+"]," + "['No facturados',"+tools.getNotInvoiced()+"]";					
 
-			if( a == 0 )				
-				data = "['"+customers[a]+"',"+total[a]+"]" + x;					
-			else{
-				data += "['"+customers[a]+"',"+total[a]+"]";
-				if( a < customers.length - 1 )
-					data += x;					
-			}
-			
-		}
-		
 		if(IMain.DEBUG)
 			System.out.println("columns: "+data);
-
 		
-		return data;
-    }
+		return null;
+	}
+
+   
     
     public String setDataToDraw(String dataColumns, String type,String title, String nameColumn1, String nameColumn2) {
    	

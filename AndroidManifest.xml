@@ -88,7 +88,7 @@
             android:value="AIzaSyAzZ9jMK0E0syMHnDWCxtNUOjrJ7nnIHLw" />
 
         <activity
-            android:name="com.crystalis.view.Reporte1Fragment"
+            android:name="com.crystalis.view.ReportSalesFragment"
             android:screenOrientation="landscape" >
         </activity>
     </application>

@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.crystalis.interfaces.IMain;
+import com.crystalis.interfaces.IQuerys;
 import com.crystalis.interfacesDB.IColumnNamesTableReportSalesOrder;
 import com.crystalis.interfacesDB.IScriptTables;
 import com.crystalis.interfacesDB.ISettingsDB;
@@ -53,10 +54,17 @@ public class DataSource {
 		  database.insert(ITableNames.TABLE_REPORT_SALESORDER, null, values);
 	  }
 	  
-	  private String query = "SELECT customerid,count(*) as total, sum(ordervalue) as suma FROM salesorder where invoice != '' group by customerid";
 	  
 	public Cursor getDataSalesToReport() {
-		return database.rawQuery(query,null);
+		return database.rawQuery(IQuerys.querySales,null);
+	}
+	
+	public Cursor getInvoicedReport() {
+		return database.rawQuery(IQuerys.queryInvoiced,null);
+	}
+	
+	public Cursor getNotInvoicedReport() {
+		return database.rawQuery(IQuerys.queryNoIncoived,null);
 	}
 	
 	public boolean isEmptyTableSales( String name) {

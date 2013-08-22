@@ -180,6 +180,62 @@ public class Parser {
 		return total;
 	}
 	
+	public int getInvoiced(){
+		
+		int total = 0;
+		
+		datasource.open();
+		
+		Cursor cursor = datasource.getInvoicedReport();
+
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+			
+			if(IMain.DEBUG)
+				System.out.println("getDataReport2: cursor: "+cursor.getCount());
+			
+			while(!cursor.isAfterLast()){
+						total  = cursor.getInt(cursor.getColumnIndex("total"));
+						cursor.moveToNext();
+			}
+			
+			}
+		datasource.close();
+		cursor.close();
+		
+		return total;
+	}
+	
+	public int getNotInvoiced(){
+		
+		int total = 0;
+		
+		datasource.open();
+		
+		Cursor cursor = datasource.getNotInvoicedReport();
+
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+			
+			if(IMain.DEBUG)
+				System.out.println("getDataReport2: cursor: "+cursor.getCount());
+			
+			while(!cursor.isAfterLast()){
+						total  = cursor.getInt(cursor.getColumnIndex("total"));
+						cursor.moveToNext();
+			}
+			
+			}
+		datasource.close();
+		cursor.close();
+		
+		return total;
+	}
+	
+	
+	
 	
 	public ArrayList<Header> FilterHeaderJson(String json) {
 		
